@@ -1,0 +1,41 @@
+{
+  "name": "build-once",
+  "version": "0.0.1",
+  "description": "Build your code, only if you need to...",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "yarn lint",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "eslint --ext .ts src/ --fix",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Nicolas Cochard (nicolas@cochard.co.uk)",
+  "license": "MIT",
+  "homepage": "https://github.com/ncochard/build-once#readme",
+  "bugs": {
+    "url": "https://github.com/ncochard/build-once/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/build-once.git"
+  },
+  "bin": {
+    "build-once": "./bin/build-once.js"
+  },
+  "devDependencies": {
+    "@types/mkdirp": "^1.0.0",
+    "@types/node": "^13.13.4"
+  },
+  "dependencies": {
+    "build-once-plugin": "^0.0.1",
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0",
+    "cosmiconfig": "^6.0.0",
+    "execa": "^4.0.0",
+    "globby": "^11.0.0",
+    "mkdirp": "^1.0.4",
+    "throat": "^5.0.0"
+  }
+}

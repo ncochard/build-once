@@ -1,0 +1,28 @@
+{
+  "name": "build-once-plugin-link",
+  "version": "0.0.1",
+  "description": "Plugin for the `build-once` utility: automatically detect symlink dependencies.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "yarn lint",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "eslint --ext .ts src/ --fix",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Nicolas Cochard (nicolas@cochard.co.uk)",
+  "license": "MIT",
+  "homepage": "https://github.com/ncochard/build-once#readme",
+  "bugs": {
+    "url": "https://github.com/ncochard/build-once/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/build-once.git"
+  },
+  "dependencies": {
+    "build-once-plugin": "^0.0.1",
+    "path": "^0.12.7"
+  }
+}

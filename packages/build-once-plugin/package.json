@@ -1,0 +1,24 @@
+{
+  "name": "build-once-plugin",
+  "version": "0.0.1",
+  "description": "Plugin system for the utility build-once.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "yarn lint",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint": "eslint --ext .ts src/ --fix",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Nicolas Cochard (nicolas@cochard.co.uk)",
+  "license": "MIT",
+  "homepage": "https://github.com/ncochard/build-once#readme",
+  "bugs": {
+    "url": "https://github.com/ncochard/build-once/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/build-once.git"
+  }
+}

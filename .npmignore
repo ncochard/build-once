@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+node_modules/
+.eslintrc.js
+.prettierrc.js
+*.log
+tsconfig.json

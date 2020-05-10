@@ -1,0 +1,36 @@
+{
+  "name": "build-once-monorepo",
+  "version": "0.0.1",
+  "description": "Build your code, only if you need to...",
+  "main": "index.js",
+  "private": true,
+  "author": "Nicolas Cochard (nicolas@cochard.co.uk)",
+  "license": "MIT",
+  "homepage": "https://github.com/ncochard/build-once#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/build-once.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ncochard/build-once/issues"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build --stream",
+    "clean": "lerna run clean --stream --parallel",
+    "lint": "lerna run lint --stream --parallel"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "lerna": "^3.20.2",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.8.3"
+  }
+}
