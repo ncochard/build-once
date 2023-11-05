@@ -3,7 +3,7 @@ module.exports =  {
   parser:  "@typescript-eslint/parser",
   extends:  [
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
+    "prettier",
     "plugin:prettier/recommended"
   ],
   parserOptions:  {
@@ -11,6 +11,7 @@ module.exports =  {
     sourceType:  "module",
   },
   rules:  {
+    "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "sort-imports": ["error", {
       "ignoreCase": true

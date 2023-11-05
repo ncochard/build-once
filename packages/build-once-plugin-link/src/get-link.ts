@@ -13,7 +13,7 @@ async function getLink(dependencyName: string): Promise<string | undefined> {
   const req = createRequire(join(process.cwd(), "index.js"));
   const folders: string[] = req.resolve.paths(dependencyName) || [];
   const fullPaths: string[] = folders.map((f: string): string =>
-    join(f, dependencyName)
+    join(f, dependencyName),
   );
   //console.log(fullPaths);
   for (const fullPath of fullPaths) {
@@ -31,8 +31,8 @@ export async function getLinks(dependencyNames: string[]): Promise<string[]> {
   const potentialLinks: (string | undefined)[] = await Promise.all(
     dependencyNames.map(
       (dependencyName: string): Promise<string | undefined> =>
-        throat(() => getLink(dependencyName))
-    )
+        throat(() => getLink(dependencyName)),
+    ),
   );
   const links = potentialLinks.filter((r) => !!r) as string[];
   return links.map(makeRelative);

@@ -15,7 +15,7 @@ const json = (data: object): string => JSON.stringify(data, null, "  ");
 
 export async function saveHashes(
   { hashes, globs, files }: SavedData,
-  { debug, script }: SaveOptions
+  { debug, script }: SaveOptions,
 ): Promise<void> {
   await mkdirp(folder);
   if (debug) {

@@ -23,7 +23,7 @@ async function main(): Promise<void> {
   const cmd = `${config.command} run ${script}`;
   if (same(newHashes, lastHashes)) {
     info(
-      `The stored ${hashAlgorithm} indicates that "${cmd}" doesn't need to be executed.`
+      `The stored ${hashAlgorithm} indicates that "${cmd}" doesn't need to be executed.`,
     );
   } else {
     const { success, exitCode } = await executeCommand(config, {

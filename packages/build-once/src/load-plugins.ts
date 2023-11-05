@@ -12,7 +12,7 @@ const throat = throatFactory(5);
 async function loadPlugin(
   pluginName: string,
   logger: Logger,
-  debugMode: boolean
+  debugMode: boolean,
 ): Promise<PluginInfo> {
   return new Promise<PluginInfo>((resolve, reject) => {
     const pluginDepency = `build-once-plugin-${pluginName}`;
@@ -31,7 +31,7 @@ async function loadPlugin(
       });
     } catch (e) {
       logger.error(
-        `Could not load plugin \"${pluginName}\". Try \"npm install --dev ${pluginDepency}\".`
+        `Could not load plugin \"${pluginName}\". Try \"npm install --dev ${pluginDepency}\".`,
       );
       reject(e);
     }
@@ -41,12 +41,12 @@ async function loadPlugin(
 export async function loadPlugins(
   config: Configuration,
   logger: Logger,
-  debugMode: boolean
+  debugMode: boolean,
 ): Promise<PluginInfo[]> {
   return await Promise.all(
     config.use.map(
       (p: string): Promise<PluginInfo> =>
-        throat(() => loadPlugin(p, logger, debugMode))
-    )
+        throat(() => loadPlugin(p, logger, debugMode)),
+    ),
   );
 }

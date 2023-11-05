@@ -20,7 +20,7 @@ export async function getGlobs(
   config: Globs,
   pluginInfos: PluginInfo[],
   logger: Logger,
-  debugMode: boolean
+  debugMode: boolean,
 ): Promise<Globs> {
   const globsListPromise: Promise<Globs>[] = pluginInfos.map(
     async (p: PluginInfo) => {
@@ -33,7 +33,7 @@ export async function getGlobs(
         }
         throw e;
       }
-    }
+    },
   );
   const globsList: Globs[] = await Promise.all(globsListPromise);
   return globsList.reduce(mergeGlobs, config);

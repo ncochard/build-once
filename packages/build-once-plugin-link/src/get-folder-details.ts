@@ -2,7 +2,7 @@ import * as fs from "fs";
 import { FolderDetails } from "./types";
 
 export async function getFolderDetails(
-  fileName: string
+  fileName: string,
 ): Promise<FolderDetails> {
   return new Promise<FolderDetails>((resolve) => {
     fs.lstat(fileName, function (err, stats) {

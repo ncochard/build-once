@@ -15,7 +15,7 @@ export async function getConfiguration(script: string): Promise<Configuration> {
   const result = configResult.config[script];
   if (!result) {
     error(
-      `The configuration section "${projectName}" in the package.json is missing the definition of the script "${script}". [${configResult.filepath}]`
+      `The configuration section "${projectName}" in the package.json is missing the definition of the script "${script}". [${configResult.filepath}]`,
     );
     process.exit(1);
   }

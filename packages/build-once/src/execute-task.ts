@@ -6,7 +6,7 @@ const SIGTERM = "SIGTERM";
 
 export async function executeCommand(
   config: Configuration,
-  command: CommandOptions
+  command: CommandOptions,
 ): Promise<CommandResult> {
   const cmd = `${config.command} run ${command.script}`;
   info(`Executing "${cmd}"`);
@@ -28,7 +28,7 @@ export async function executeCommand(
     const result = await subprocess;
     info(`Completed successfully: "${cmd}"`);
     return { success: true, exitCode: result.exitCode };
-  } catch (e) {
+  } catch (e: any) {
     if (e.code) {
       error(`Terminated with error ${e.code}: "${cmd}"`);
       return { success: false };

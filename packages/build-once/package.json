@@ -21,9 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/ncochard/build-once.git"
   },
-  "bin": {
-    "build-once": "./bin/build-once.js"
-  },
+  "bin": "./bin/build-once.js",
   "devDependencies": {
     "@types/mkdirp": "^1.0.0",
     "@types/node": "^13.13.4"

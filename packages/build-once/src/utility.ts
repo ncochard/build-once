@@ -2,7 +2,7 @@ import { Hashes } from "./types";
 
 export function same(
   value1: Hashes | undefined,
-  value2: Hashes | undefined
+  value2: Hashes | undefined,
 ): boolean {
   if (value1) {
     return (
