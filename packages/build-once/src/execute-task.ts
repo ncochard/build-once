@@ -4,6 +4,10 @@ import { debug, error, info } from "./feedback";
 
 const SIGTERM = "SIGTERM";
 
+interface UnknownError {
+  code?: number;
+}
+
 export async function executeCommand(
   config: Configuration,
   command: CommandOptions,
@@ -28,13 +32,14 @@ export async function executeCommand(
     const result = await subprocess;
     info(`Completed successfully: "${cmd}"`);
     return { success: true, exitCode: result.exitCode };
-  } catch (e: any) {
-    if (e.code) {
-      error(`Terminated with error ${e.code}: "${cmd}"`);
+  } catch (e: unknown) {
+    const err = e as UnknownError;
+    if (err.code) {
+      error(`Terminated with error ${err.code}: "${cmd}"`);
       return { success: false };
     } else {
       error(`Terminated with error: "${cmd}"`);
-      return { success: false, exitCode: e.code };
+      return { success: false, exitCode: err.code };
     }
   } finally {
     process.off(SIGTERM, kill);

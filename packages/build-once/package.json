@@ -7,7 +7,7 @@
     "prebuild": "yarn lint",
     "build": "tsc",
     "watch": "tsc --watch",
-    "lint": "eslint --ext .ts src/ --fix",
+    "lint": "npx eslint src/ --fix",
     "clean": "rimraf dist",
     "prepublishOnly": "npm run build"
   },

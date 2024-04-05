@@ -61,8 +61,6 @@ export async function getHashForConfig(
       input: await hashForInputs,
       output: await hashForOutputs,
     };
-  } catch (e) {
-    throw e;
   } finally {
     if (debug) {
       const [s, ns] = process.hrtime(hrstart);

@@ -7,11 +7,11 @@ const f = dim(`(${process.cwd()})`);
 export function debug(message: string): void {
   process.stdout.write(`${n} ${message} ${f}\n`);
 }
-export function error(message: any): void {
+export function error(message: unknown): void {
   if (typeof message === "string") {
     process.stdout.write(`${n} ${message} ${f}\n`);
   } else {
-    process.stdout.write(message);
+    console.error(message);
   }
 }
 export function info(message: string): void {
