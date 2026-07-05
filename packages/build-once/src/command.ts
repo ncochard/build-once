@@ -1,9 +1,8 @@
 import { CommandOptions } from "./types";
 import { error } from "./feedback";
-import { program } from "commander";
 
 export async function getCommand(): Promise<CommandOptions> {
-  await Promise.resolve();
+  const { program } = await import("commander");
   program.requiredOption(
     "-n, --script <script>",
     "name of the script configuration",

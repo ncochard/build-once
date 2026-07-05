@@ -1,8 +1,7 @@
-import { bold, dim } from "chalk";
 import { projectName } from "build-once-plugin";
 
-const n = bold(`[${projectName}]`);
-const f = dim(`(${process.cwd()})`);
+const n = `\x1b[1m[${projectName}]\x1b[22m`;
+const f = `\x1b[2m(${process.cwd()})\x1b[22m`;
 
 export function debug(message: string): void {
   process.stdout.write(`${n} ${message} ${f}\n`);
