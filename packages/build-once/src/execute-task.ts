@@ -1,4 +1,4 @@
-import * as execa from "execa";
+import execa from "execa";
 import { CommandOptions, CommandResult, Configuration } from "./types";
 import { debug, error, info } from "./feedback";
 

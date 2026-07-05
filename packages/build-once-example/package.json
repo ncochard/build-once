@@ -1,0 +1,33 @@
+{
+  "name": "build-once-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Minimal project used to illustrate and validate the build-once utility inside this monorepo.",
+  "scripts": {
+    "compile": "node compile.js",
+    "build": "build-once --script compile",
+    "clean": "rimraf dist .build-once"
+  },
+  "author": "Nicolas Cochard (nicolas@cochard.co.uk)",
+  "license": "MIT",
+  "homepage": "https://github.com/ncochard/build-once#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/build-once.git"
+  },
+  "build-once": {
+    "compile": {
+      "command": "yarn",
+      "input": [
+        "src/**/*.js",
+        "compile.js"
+      ],
+      "output": [
+        "dist/**/*.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "build-once": "^0.0.1"
+  }
+}
