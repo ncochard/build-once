@@ -1,0 +1,9 @@
+dist/
+.build-once/
+node_modules/
+*.local.json
+*.local.js
+*.log
+*.orig
+.DS_Store
+.idea

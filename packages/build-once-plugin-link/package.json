@@ -21,8 +21,12 @@
     "type": "git",
     "url": "git+https://github.com/ncochard/build-once.git"
   },
+  "devDependencies": {
+    "@types/node": "^24.13.2"
+  },
   "dependencies": {
     "build-once-plugin": "^0.0.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "throat": "^6.0.2"
   }
 }
