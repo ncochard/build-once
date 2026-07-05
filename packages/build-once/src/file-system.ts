@@ -1,7 +1,7 @@
-import globby from "globby";
 import { Files, Globs } from "./types";
 
 async function findFiles(filePatters: string[]): Promise<string[]> {
+  const { globby } = await import("globby");
   return (await globby(filePatters)).sort();
 }
 
