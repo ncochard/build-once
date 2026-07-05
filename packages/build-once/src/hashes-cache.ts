@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import * as mkdirp from "mkdirp";
+import { mkdirp } from "mkdirp";
 import * as path from "path";
 import { Hashes, LoadOptions, SavedData, SaveOptions } from "./types";
 import { projectName } from "build-once-plugin";

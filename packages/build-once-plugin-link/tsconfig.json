@@ -3,15 +3,15 @@
         "outDir": "dist",
         "rootDir": "src",
         "module": "commonjs",
-        "moduleResolution": "node",
-        "target": "es5",
-        "lib": ["es6", "dom", "es2018.intl"],
+        "moduleResolution": "bundler",
+        "target": "es2023",
+        "lib": ["es2023", "dom", "es2023.intl"],
         "declaration": true,
         "strict": true,
         "resolveJsonModule": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "preserveConstEnums": true
+        "types": ["node"]
     },
     "include": ["src/*.ts"]
 }

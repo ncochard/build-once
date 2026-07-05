@@ -10,8 +10,9 @@ export async function getCommand(): Promise<CommandOptions> {
   );
   program.option("-d, --debug", "outputs debugging information");
   program.parse(process.argv);
-  const script = `${program.script}`;
-  const debug: boolean = program.debug === true;
+  const opts = program.opts();
+  const script = `${opts.script}`;
+  const debug: boolean = opts.debug === true;
   if (!script) {
     error(`Missing --script parameter`);
   }
