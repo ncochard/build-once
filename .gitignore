@@ -5,3 +5,10 @@ node_modules/
 *.orig
 .DS_Store
 .idea
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

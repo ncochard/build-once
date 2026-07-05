@@ -1677,6 +1677,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"build-once-example@workspace:packages/build-once-example":
+  version: 0.0.0-use.local
+  resolution: "build-once-example@workspace:packages/build-once-example"
+  dependencies:
+    build-once: "npm:^0.0.1"
+  languageName: unknown
+  linkType: soft
+
 "build-once-monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "build-once-monorepo@workspace:."
@@ -1708,7 +1716,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"build-once@workspace:packages/build-once":
+"build-once@npm:^0.0.1, build-once@workspace:packages/build-once":
   version: 0.0.0-use.local
   resolution: "build-once@workspace:packages/build-once"
   dependencies:
