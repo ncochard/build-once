@@ -5,6 +5,7 @@ node_modules/
 *.orig
 .DS_Store
 .idea
+.turbo/
 
 .yarn/*
 !.yarn/patches

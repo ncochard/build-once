@@ -16,7 +16,7 @@ produced.
 ## Try it
 
 From this folder (or via `yarn build` at the repo root, which runs every
-workspace's `build` script through lerna):
+workspace's `build` script through turbo):
 
 ```
 yarn build                          # first run: nothing cached yet, so it compiles
