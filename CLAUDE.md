@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `build-once` is a CLI utility that skips re-running a build script (e.g. `npm run build`) if nothing under the configured `input`/`output` globs has changed since the last run. It hashes the matched files and compares against a stored hash in a `.build-once` folder; if hashes match, the wrapped script is skipped, otherwise it runs and the hashes are refreshed.
 
-This is a Yarn/Lerna monorepo (`yarn@4.0.1`, workspaces) with three packages:
+This is a Yarn/Turbo monorepo (`yarn@4.0.1`, workspaces) with three packages:
 
 - `packages/build-once` — the CLI itself.
 - `packages/build-once-plugin` — defines the plugin contract (`Plugin`, `pluginFactory`, `Globs`, `Logger` types) that `build-once` and third-party plugins depend on.
@@ -14,7 +14,7 @@ This is a Yarn/Lerna monorepo (`yarn@4.0.1`, workspaces) with three packages:
 
 ## Commands
 
-Run from the repo root (uses `lerna run ... --stream`):
+Run from the repo root (uses `turbo run ...`, respecting the workspace dependency graph and caching):
 
 ```
 yarn build   # tsc build for every package
