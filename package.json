@@ -31,5 +31,8 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.1"
   },
+  "resolutions": {
+    "tar@7.5.11": "7.5.16"
+  },
   "packageManager": "yarn@4.0.1"
 }
